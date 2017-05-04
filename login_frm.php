@@ -5,7 +5,7 @@
 ?>
 <html>
 	<head>
-	<title>ADMIN</title>
+	<title>LOGIN</title>
 	<style>
 	body{
 	background-color:#cc88ff;
@@ -28,9 +28,30 @@ div{
 	background-color:grey;
 }
 	</style>
+	<link rel="stylesheet" type="text/css" href="mysylr.css">
 	</head>
 
 	<body>
+		<nav>
+  <ul>
+    <li>
+        <a href="signup.php">Sign up</a>
+    </li>
+    <li>
+        <a href="login_frm.php">Login</a>
+    </li>
+    <li>
+        <a href="search_dest.php">Check Availbility</a>
+    </li>
+    <li>
+        <a href="flight_booking.php">Reserve Ticket</a>
+    </li>
+    <li>
+        <a href="#">Contact Us</a>
+    </li>
+  </ul>
+</nav>
+
 	<div class="form" id = "login">
 	<form name="reg" action="login.php" method="post">
 	<table height="200px" border="0" cellpadding="10" cellspacing="5" align="center">

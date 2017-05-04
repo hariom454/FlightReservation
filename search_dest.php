@@ -32,9 +32,7 @@ div{
 	background-color:grey;
 }
 </style>
-
-</head>
-<body>
+<link rel="stylesheet" type="text/css" href="mysylr.css">
 <script>
 function validflight(){
 var x=document.forms["flight"]["city_origin"].value;
@@ -52,7 +50,29 @@ if(x==y)
 
 }
 </script>
-		<h1 align="center" style="color:orange;">HELLO <?php echo $_SESSION["user"]; ?> <br> WELCOME IN OFFICIAL SITE OF AIRINDIA</h1>
+</head>
+<body>
+<nav>
+  <ul>
+    <li>
+        <a href="signup.php">Sign up</a>
+    </li>
+    <li>
+        <a href="login_frm.php">Login</a>
+    </li>
+    <li>
+        <a href="search_dest.php">Check Availbility</a>
+    </li>
+    <li>
+        <a href="flight_booking.php">Reserve Ticket</a>
+    </li>
+    <li>
+        <a href="#">Contact Us</a>
+    </li>
+  </ul>
+</nav>
+
+<h1> WELCOME IN OFFICIAL SITE OF AIRINDIA</h1>
 <div class="main">
 <form method="post" name="flight" action="flight_booking.php" target="_self" onsubmit="return validflight()">
 select Origin:<br><input list="origin" name="city_origin" value="">

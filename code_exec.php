@@ -14,14 +14,14 @@ die("PASSWORD IS NOT MATCH");
 }
 else $password = $p1;
 $password = md5($password);
-$pr_id = mysql_query("SELECT MAX(mem_id) FROM `member`") or die(mysql_error());
+$pr_id = mysql_query("SELECT MAX(mem_id) FROM member") or die(mysql_error());
 $ar = mysql_fetch_row($pr_id);
 $id = $ar[0];
 if($id == "") $id = "blg".date('y')."001";
 else
 $id++;
 
-$result1 = mysql_query("INSERT INTO `member`(`mem_id`,`user_name`,`password`) VALUES('$id', '$user', '$password')") or die(mysql_error());
+$result1 = mysql_query("INSERT INTO member(`mem_id`,`user_name`,`password`) VALUES('$id', '$user', '$password')") or die(mysql_error());
 if(!$result1) die("NOT REGISTERING YOU");
 mysql_close($con);
 header("location: index.php");

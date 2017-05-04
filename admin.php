@@ -12,8 +12,10 @@ body{
 <body>
 <?php
 include "config.php";
+//include "login.php";
 
-$result = mysql_query("SELECT * FROM `flight`") or die("error");
+	//header "admin.php"
+$result = mysql_query("SELECT * FROM flight") or die("error");
 $count= mysql_num_rows($result);
 
 echo "<table border = '1'>";
@@ -33,17 +35,20 @@ if(isset($_POST['submit']))
 	$start = $_POST['start'];
 	$end = $_POST['end'];
 	$date = $_POST['date'];
-	$result2 = mysql_query("INSERT INTO `flight` VALUES('$id', '$start', '$end' , '$date')") or die(mysql_error());
+	$passenger=$_POST['passengers'];
+	$result2 = mysql_query("INSERT INTO flight VALUES('$id', '$start', '$end' , '$passenger','$date')") or die(mysql_error());
 }
+
 ?>
 
 <form name="admin" action="admin.php" method = "post">
 ADD INFO<br>
 <table>
-<tr><td>ID</td><td><input type = "text" name= "id"></td>
-<tr><td>START</td><td><input type = "text" name ="start"></td>
-<tr><td>END</td><td><input type = "text" name="end"></td>
-<tr><td>DATE</td><td><input type = "date" name ="date"></td>
+<tr><td>ID</td><td><input type = "text" name= "id"></td></tr>
+<tr><td>START</td><td><input type = "text" name ="start"></td></tr>
+<tr><td>END</td><td><input type = "text" name="end"></td></tr>
+<tr><td>PASSENGERS</td><td><input type = "text" name ="passengers"></td></tr>
+<tr><td>DATE</td><td><input type = "date" name ="date"></td></tr>
 <tr><td><input type = "submit" name="submit" value="submit"></td></tr>
 </table>
 </form>

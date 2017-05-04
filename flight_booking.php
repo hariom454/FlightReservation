@@ -8,8 +8,29 @@ table tr th{
 	border-collapse:collapse;
 }
 </style>
+<link rel="stylesheet" type="text/css" href="mysylr.css">
 </head>
 <body>
+	<nav>
+  <ul>
+    <li>
+        <a href="signup.php">Sign up</a>
+    </li>
+    <li>
+        <a href="login_frm.php">Login</a>
+    </li>
+    <li>
+        <a href="search_dest.php">Check Availbility</a>
+    </li>
+    <li>
+        <a href="flight_booking.php">Reserve Ticket</a>
+    </li>
+    <li>
+        <a href="#">Contact Us</a>
+    </li>
+  </ul>
+</nav>
+
 <table>
 <tr>
 <th>flight_id</th>
@@ -22,7 +43,8 @@ table tr th{
 	include "config.php";
 	$result = mysql_query("SELECT * FROM `flight` WHERE fl_start = '".$_POST['city_origin']."' AND fl_end = '".$_POST['city_dest']."' AND fl_sate = '".$_POST['date']."'") or die(mysql_error());
 	$count= mysql_num_rows($result);
-if($count == 1){
+	echo $result;
+if($count){
 	while($result1 = mysql_fetch_row($result))
 {
 	echo "<tr>";
